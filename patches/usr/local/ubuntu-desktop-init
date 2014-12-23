@@ -11,4 +11,5 @@ if [ ! -d /home/$DESKTOP_USER ]; then
     echo "User: $DESKTOP_USER, password: $PASS"
     useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $DESKTOP_USER
     echo "$DESKTOP_USER:$PASS" | chpasswd
+    echo "$PASS" > /home/$DESKTOP_USER/.vncpasswd
 fi
