@@ -11,7 +11,7 @@ RUN /usr/local/sbin/builder-enter
 RUN apt-get -q update &&      \
     apt-get -y -qq upgrade && \
     apt-get install -y -q     \
-        lxde-core lxterminal tightvncserver \
+        pwgen lxde-core lxterminal tightvncserver \
     && apt-get clean
 
 
