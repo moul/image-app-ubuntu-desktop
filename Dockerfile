@@ -11,10 +11,12 @@ RUN /usr/local/sbin/builder-enter
 RUN apt-get -q update &&      \
     apt-get -y -qq upgrade && \
     apt-get install -y -q     \
+        gtk2-engines-murrine \
         lxde-core \
         lxterminal \
         pwgen \
         tightvncserver \
+        ttf-ubuntu-font-family \
         x11vnc \
         xvfb \
     && apt-get clean
