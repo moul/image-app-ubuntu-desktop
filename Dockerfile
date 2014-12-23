@@ -16,7 +16,7 @@ RUN apt-get -q update &&      \
 
 
 # Patch rootfs
-#ADD ./patches/etc/ /etc/
+ADD ./patches/etc/ /etc/
 ADD ./patches/usr/ /usr/
 
 
