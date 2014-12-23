@@ -16,7 +16,7 @@ if [ ! -d /home/$DESKTOP_USER ]; then
 fi
 
 # XVFB
-Xvfb :1 -screen 0 1024x768x16 &
+Xvfb :1 -screen 0 1024x768x16 -extension RANDR &
 sleep 3
 
 # X11VNC
