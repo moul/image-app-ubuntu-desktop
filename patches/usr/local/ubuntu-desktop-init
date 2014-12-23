@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+DESKTOP_USER=ubuntu
+
+if [ ! -d /home/$DESKTOP_USER ]; then
+    PASS=$(pwgen -c -n -1 10)
+    echo "User: $DESKTOP_USER, password: $PASS"
+    useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $DESKTOP_USER
+    echo "$DESKTOP_USER:$PASS" | chpasswd
+fi
