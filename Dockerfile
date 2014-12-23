@@ -18,6 +18,7 @@ RUN apt-get -q update &&      \
         pwgen \
         tightvncserver \
         ttf-ubuntu-font-family \
+        x11-apps \
         x11vnc \
         xvfb \
     && apt-get clean
