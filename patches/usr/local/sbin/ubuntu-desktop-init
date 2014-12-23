@@ -15,18 +15,7 @@ if [ ! -d /home/$DESKTOP_USER ]; then
     x11vnc -storepasswd "$PASS" /root/.vncpasswd
 fi
 
-# XVFB
-Xvfb :1 -screen 0 1024x768x16 -extension RANDR &
-sleep 3
-
-# X11VNC
-(while true; do x11vnc; sleep 1; done) &
-sleep 3
-
-# LXSESSION
-sudo -u $DESKTOP_USER bash -c "cd /home/$DESKTOP_USER && HOME=/home/$DESKTOP_USER DISPLAY=:1 /usr/bin/lxsession" &
-sleep 3
-sudo -u ubuntu bash -c "DISPLAY=:1 --set-wallpaper /home/$DESKTOP_USER/bg.jpg"
+su - ubuntu -c sh -c 'x11vnc -forever -bg' &
 
 # NOVNC
 # TODO

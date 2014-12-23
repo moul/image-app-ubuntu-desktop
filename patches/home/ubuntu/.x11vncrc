@@ -1,0 +1,14 @@
+create
+env FD_PROG=/home/ubuntu/.xinitrc
+env X11VNC_FINDDISPLAY_ALWAYS_FAILS=1
+env X11VNC_CREATE_GEOM=1024x768x16
+gone "killall Xvfb"
+passwdfile .passwd
+xkb
+xrandr
+#ncache 10
+#loopbg100
+#forever
+#alwaysshared
+#shared
+#norepeat
