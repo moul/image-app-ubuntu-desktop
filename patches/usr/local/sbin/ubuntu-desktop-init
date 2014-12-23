@@ -20,12 +20,13 @@ Xvfb :1 -screen 0 1024x768x16 &
 sleep 3
 
 # X11VNC
-x11vnc
+(while true; do x11vnc; sleep 1; done) &
 sleep 3
 
 # LXSESSION
 sudo -u $DESKTOP_USER bash -c "cd /home/$DESKTOP_USER && HOME=/home/$DESKTOP_USER DISPLAY=:1 /usr/bin/lxsession" &
-sleep 1
+sleep 3
+sudo -u ubuntu bash -c "DISPLAY=:1 --set-wallpaper /home/$DESKTOP_USER/bg.jpg"
 
 # NOVNC
 # TODO
