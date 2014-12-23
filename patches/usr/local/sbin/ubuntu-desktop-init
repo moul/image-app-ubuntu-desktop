@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -xe
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
@@ -12,4 +12,20 @@ if [ ! -d /home/$DESKTOP_USER ]; then
     useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $DESKTOP_USER
     echo "$DESKTOP_USER:$PASS" | chpasswd
     echo "$PASS" > /home/$DESKTOP_USER/.vncpasswd
+    x11vnc -storepasswd "$PASS" /root/.vncpasswd
 fi
+
+# XVFB
+Xvfb :1 -screen 0 1024x768x16 &
+sleep 3
+
+# X11VNC
+x11vnc
+sleep 3
+
+# LXSESSION
+sudo -u $DESKTOP_USER bash -c "cd /home/$DESKTOP_USER && HOME=/home/$DESKTOP_USER DISPLAY=:1 /usr/bin/lxsession" &
+sleep 1
+
+# NOVNC
+# TODO
