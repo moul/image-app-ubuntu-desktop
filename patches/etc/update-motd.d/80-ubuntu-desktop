@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cat <<EOF
+
+Ubuntu Desktop is installed and is running on DISPLAY=$DISPLAY.
+A VNC server is listening on the default port 5900.
+vnc://$(oc-metadata --cached PUBLIC_IP_ADDRESS):5900?password=$(cat /home/ubuntu/.vncpasswd)
+EOF
