@@ -11,6 +11,7 @@ RUN /usr/local/sbin/builder-enter
 RUN apt-get -q update &&      \
     apt-get -y -qq upgrade && \
     apt-get install -y -q     \
+        fluxbox \
         gtk2-engines-murrine \
         lxde-core \
         lxterminal \
