@@ -1,4 +1,0 @@
-rfbauth /root/.vncpasswd
-display :1
-xkb
-#ncache 10

@@ -6,16 +6,16 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 DESKTOP_USER=ubuntu
 
-if [ ! -d /home/$DESKTOP_USER ]; then
+if [ ! -f /home/$DESKTOP_USER/.vncpasswd ]; then
     PASS=$(pwgen -c -n -1 10)
     echo "User: $DESKTOP_USER, password: $PASS"
     useradd --create-home --shell /bin/bash --user-group --groups adm,sudo $DESKTOP_USER
     echo "$DESKTOP_USER:$PASS" | chpasswd
     echo "$PASS" > /home/$DESKTOP_USER/.vncpasswd
-    x11vnc -storepasswd "$PASS" /root/.vncpasswd
+    # x11vnc -storepasswd "$PASS" /root/.vncpasswd
 fi
 
+killall x11vnc; sleep 1; killall -9 x11vnc
 su - ubuntu -c sh -c 'x11vnc -forever -bg' &
 
-# NOVNC
-# TODO
+# TODO: add NOVNC
