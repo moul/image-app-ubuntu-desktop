@@ -1,6 +1,6 @@
-## -*- docker-image-name: "armbuild/ocs-app-ubuntudesktop:vivid" -*-
-FROM armbuild/ocs-distrib-ubuntu:vivid
-MAINTAINER Online Labs <opensource@ocs.online.net> (@online_en)
+## -*- docker-image-name: "armbuild/scw-app-ubuntudesktop:vivid" -*-
+FROM armbuild/scw-distrib-ubuntu:vivid
+MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 
 # Prepare rootfs for image-builder
@@ -8,9 +8,9 @@ RUN /usr/local/sbin/builder-enter
 
 
 # Install packages
-RUN apt-get -q update &&      \
-    apt-get -y -qq upgrade && \
-    apt-get install -y -q     \
+RUN apt-get -q update \
+ && apt-get -y -qq upgrade \
+ && apt-get install -y -q \
         fluxbox \
         gtk2-engines-murrine \
         lxde-core \
@@ -21,7 +21,7 @@ RUN apt-get -q update &&      \
         x11-apps \
         x11vnc \
         xvfb \
-    && apt-get clean
+ && apt-get clean
 
 
 # Patch rootfs
