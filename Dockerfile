@@ -27,7 +27,7 @@ RUN apt-get -q update \
 # Patch rootfs
 ADD ./patches/etc/ /etc/
 ADD ./patches/usr/ /usr/
-ADD ./patches/root/ /root/
+#ADD ./patches/root/ /root/
 ADD ./patches/home/ /home/
 
 
