@@ -1,7 +1,7 @@
 # Official Ubuntu Desktop image on Scaleway
 
-[![Travis](https://img.shields.io/travis/scaleway/image-app-python.svg)](https://travis-ci.org/scaleway/image-app-ubuntudesktop)
-[![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/ubuntudesktop.html)
+[![Travis](https://img.shields.io/travis/scaleway/image-app-ubuntu-desktop.svg)](https://travis-ci.org/scaleway/image-app-ubuntu-desktop)
+[![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/ubuntu-desktop.html)
 [![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=coming-soon)
 
 Scripts to build the official Ubuntu Desktop image on Scaleway
